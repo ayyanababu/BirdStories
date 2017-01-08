@@ -11,7 +11,7 @@ export default class Signin extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I'm the Signin component</Text>
+
       </View>
     );
   }
@@ -20,5 +20,8 @@ export default class Signin extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    
   },
 });

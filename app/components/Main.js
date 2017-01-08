@@ -5,23 +5,43 @@ import {
   View,
   Text,
   StyleSheet,
+  StatusBar
 } from 'react-native';
+
+import {Router, Scene} from 'react-native-router-flux';
+
+import Signin from './Signin';
 
 export default class Main extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>I'm the Main component</Text>
-      </View>
+            <View>
+            <StatusBar
+                  barStyle="light-content"
+            />
+            <Router>
+                <Scene key="root" hideNavBar={false}>
+                    <Scene key="signin"
+                           component={Signin}
+                           title={"SignIn"}
+                           navigationBarStyle={styles.navbarstyle}
+                           titleStyle={styles.navTitle}
+                           initial={true}/>
+                </Scene>
+            </Router>
+            </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'gray',
-  },
+  navbarstyle: {
+        backgroundColor: '#066B6B',
+    },
+    navTitle:{
+      color: '#ffffff',
+      fontSize: 22,
+      fontWeight: '400',
+      textAlign: 'center',
+    },
 });
